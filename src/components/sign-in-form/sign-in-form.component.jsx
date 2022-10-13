@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  createDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailPassword,
 } from '../../utils/firebase/firebase.utils';
@@ -28,8 +27,8 @@ export default function SignInForm() {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createDocumentFromAuth(user);
+    await signInWithGooglePopup();
+    // await createDocumentFromAuth(user);
   };
 
   const handleSubmit = async (event) => {
